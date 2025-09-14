@@ -106,7 +106,10 @@ if not RESID_PLOT.exists() and not PVA_PLOT.exists():
 # ---------- Model Card ----------
 st.subheader("📄 Model Card")
 if CARD_PATH.exists():
-    with open(CARD_PATH, "r") as f:
-        st.markdown(f.read())
+    try:
+        with open(CARD_PATH, "r", encoding="utf-8", errors="ignore") as f:
+            st.markdown(f.read())
+    except Exception as e:
+        st.error(f"Could not load model card: {e}")
 else:
-    st.caption("model_card.md not found. Train with the script to generate a quick summary.")
+    st.info("ℹ️ model_card.md not found. Train with the script to generate a quick summary.")
