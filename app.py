@@ -7,7 +7,7 @@ import streamlit as st
 from pathlib import Path
 
 st.set_page_config(page_title="Boston Housing Prediction", page_icon="🏠", layout="wide")
-st.title("🏠 Boston Housing Price Prediction")
+st.title(" 🏠 Boston Housing Price Prediction 🏠 ")  # Add an emoji or extra space
 
 MODEL_PATH = Path("boston_best_model.pkl")
 META_PATH = Path("feature_columns.json")
